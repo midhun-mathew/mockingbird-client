@@ -16,7 +16,7 @@ dependencies {
 
     implementation("com.google.guava:guava:32.1.1-jre")
     implementation("org.springframework:spring-webflux:6.0.11")
-
+    implementation("org.springframework:spring-context:6.0.11")
 }
 
 java {
@@ -25,7 +25,7 @@ java {
     }
 }
 
-version = "0.1.0"
+version = "0.1.4"
 
 tasks.named<Test>("test") {
     useJUnitPlatform()
