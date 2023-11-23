@@ -1,0 +1,10 @@
+build/
+.idea
+/.gradle/
+.DS_Store
+src/.DS_Store
+out/
+/bin/
+
+env-*
+!env-sample
