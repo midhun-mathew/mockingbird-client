@@ -23,6 +23,7 @@ public class WebClientMockingFilter implements ExchangeFilterFunction {
             ClientRequest newRequest = ClientRequest.from(request)
                     .url(URI.create(mockingbirdConfig.getMockServerUrl()))
                     .method(HttpMethod.POST)
+                    .header("Accept", "application/json")
                     .header("mb_source_application", mockingbirdConfig.getApplicationName())
                     .header("mb_destination_url", request.url().toString())
                     .header("mb_method", request.method().toString())

@@ -25,7 +25,7 @@ java {
     }
 }
 
-version = "0.1.6"
+version = "0.1.7"
 
 tasks.named<Test>("test") {
     useJUnitPlatform()
