@@ -1,11 +1,11 @@
 package com.incredibles;
 
-public class Config {
+public class MockingbirdConfig {
     private final boolean enabled;
     private final String mockServerUrl;
     private final String applicationName;
 
-    public Config(boolean enabled, String mockServerUrl, String applicationName) {
+    public MockingbirdConfig(boolean enabled, String mockServerUrl, String applicationName) {
         this.enabled = enabled;
         this.mockServerUrl = mockServerUrl;
         this.applicationName = applicationName;

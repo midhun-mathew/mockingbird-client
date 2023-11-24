@@ -11,19 +11,19 @@ import java.net.URI;
 
 public class WebClientMockingFilter implements ExchangeFilterFunction {
 
-    private final Config config;
-    public WebClientMockingFilter(Config config) {
-        this.config = config;
+    private final MockingbirdConfig mockingbirdConfig;
+    public WebClientMockingFilter(MockingbirdConfig mockingbirdConfig) {
+        this.mockingbirdConfig = mockingbirdConfig;
     }
 
 
     @Override
     public Mono<ClientResponse> filter(ClientRequest request, ExchangeFunction next) {
-        if(config.isEnabled()){
+        if(mockingbirdConfig.isEnabled()){
             ClientRequest newRequest = ClientRequest.from(request)
-                    .url(URI.create(config.getMockServerUrl()))
+                    .url(URI.create(mockingbirdConfig.getMockServerUrl()))
                     .method(HttpMethod.POST)
-                    .header("mb_source_application", config.getApplicationName())
+                    .header("mb_source_application", mockingbirdConfig.getApplicationName())
                     .header("mb_destination_url", request.url().toString())
                     .header("mb_method", request.method().toString())
                     .build();
